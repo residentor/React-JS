@@ -25,7 +25,7 @@
 			constructor (name, age, dateOfBirth, salary, department)
 				{
 					super(name, age, dateOfBirth);
-					this.salary = salaryl;
+					this.salary = salary;
 					this.department = department;
 				}
 			displayInfo ()
@@ -57,16 +57,25 @@
 				}
 			devadd(surname)
 			{
-				devs.push(surname);
+				this.devs.push(surname);
 			}
 
 			devdel(pos)
 			{
-				devs.splice(pos-1,1);
+				this.devs.splice(pos-1,1);
 			}
 		}
-		let ERR = new Human('Oleg',27,27);
-		console.log(ERR.displayInfo());
+		let person1 = new Manager ('Oleg', 27, '12-DEC-1983', 10000, 'IT');
+		person1.devadd('Alexey');
+		person1.devadd('Igor');
+		person1.devdel(1);
+		console.log(person1);
+		person1.displayInfo();
+
+		let person2 = new Developer ('Evgeniy', 25, '25-JUN-1991', 8000, 'IT', 'Oleg');
+		person2.managerChange('Vladimir');
+		console.log(person2);
+		person2.displayInfo();
 	</script>
 </body>
 </html>
