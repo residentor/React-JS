@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Person</title>
+</head>
+<body>
+	<script>
+		class Human
+		{
+			constructor (name, age, dateOfBirth)
+				{
+					this.name = name;
+					this.age = age;
+					this.dateOfBirth = dateOfBirth;
+				}
+			displayInfo ()
+			{
+				console.log(this.name, this.age, this.dateOfBirth);
+			}
+		}
+
+		class Employee extends Human
+		{
+			constructor (name, age, dateOfBirth, salary, department)
+				{
+					super(name, age, dateOfBirth);
+					this.salary = salaryl;
+					this.department = department;
+				}
+			displayInfo ()
+			{
+				super.displayInfo();
+				console.log(this.salary, this.department);
+			}		
+		}
+
+		class Developer extends Employee
+		{
+			constructor (name, age, dateOfBirth, salary, department, manager)
+				{
+					super (name, age, dateOfBirth, salary, department);
+					this.manager = manager;
+				}
+			managerChange(lastname)
+			{
+				this.manager = lastname;
+			}
+		}
+
+		class Manager extends Employee
+		{
+			constructor (name, age, dateOfBirth, salary, department, devs)
+				{
+					super (name, age, dateOfBirth, salary, department);
+					this.devs = [];
+				}
+			devadd(surname)
+			{
+				devs.push(surname);
+			}
+
+			devdel(pos)
+			{
+				devs.splice(pos-1,1);
+			}
+		}
+		let ERR = new Human('Oleg',27,27);
+		console.log(ERR.displayInfo());
+	</script>
+</body>
+</html>
